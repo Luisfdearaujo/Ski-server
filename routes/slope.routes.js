@@ -10,11 +10,13 @@ router.post("/api/slope/current", async (req, res, next) => {
 		// Get the data from the request body
 		const { name, country, level, image, created, comments, rating, user } =
 			req.body;
+		console.log("test", req.body);
 
 		// Save the data in the db
 		const createdSlope = await Slope.create({
 			name,
 			country,
+			image,
 			level,
 			created,
 			comments,
