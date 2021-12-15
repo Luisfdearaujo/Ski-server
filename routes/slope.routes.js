@@ -53,7 +53,7 @@ router.get("/api/slope/current/:slopeId", async (req, res, next) => {
 		}
 
 		// Make a DB query
-		const oneSlope = await Slope.findById(slopeId); //.populate("User");
+		const oneSlope = await Slope.findById(slopeId).populate("user");
 
 		// Send the response
 		res.status(200).json(oneSlope);
