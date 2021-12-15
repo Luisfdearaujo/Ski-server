@@ -2,6 +2,9 @@ const router = require("express").Router();
 
 const fileUploader = require("../config/cloudinary.config");
 
+router.get("/", (req, res) => {
+	res.json("IT WORKS!🤯");
+});
 // POST /api/upload - Used for uploading an image
 router.post(
 	"/api/upload",
@@ -20,6 +23,5 @@ router.post(
 		res.json({ secure_url: req.file.path });
 	}
 );
-
 
 module.exports = router;
