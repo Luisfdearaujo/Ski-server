@@ -25,11 +25,11 @@ module.exports = (app) => {
 
   // controls a very specific header to pass headers from the frontend
   app.use(
-    cors({
-      credentials: true,
-      origin: [REACT_APP],
-    })
-  );
+		cors({
+			credentials: true,
+			origin: [REACT_APP, "https://snowhill.netlify.app/"],
+		})
+	);
 
   // In development environment the app logs
   app.use(logger("dev"));
